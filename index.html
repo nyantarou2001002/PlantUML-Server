@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantUML Diagram Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/monaco-editor@0.29.1/min/vs/loader.js"></script>
+    <script>
+        require.config({ paths: { 'vs': 'https://unpkg.com/monaco-editor@0.29.1/min/vs' }});
+        window.MonacoEnvironment = { getWorkerUrl: () => proxy };
+        let proxy = URL.createObjectURL(new Blob([`
+            self.MonacoEnvironment = {
+                baseUrl: 'https://unpkg.com/monaco-editor@0.29.1/min/'
+            };
+            importScripts('https://unpkg.com/monaco-editor@0.29.1/min/vs/base/worker/workerMain.js');
+        `], { type: 'application/javascript' }));
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>PlantUML Diagram Generator</h1>
+        <div id="editor" style="height: 400px; border: 1px solid #ccc;"></div>
+        <div id="diagramOutput"></div>
+        <button id="downloadPng">Download as PNG</button>
+        <button id="downloadSvg">Download as SVG</button>
+        <button id="downloadTxt">Download as TXT</button>
+        <div id="cheatSheet">
+            <h3>PlantUML Syntax Cheat Sheet</h3>
+            <p>Usecase Diagram Example: </p>
+            <pre>
+@startuml
+actor User
+User -> (Usecase Example)
+@enduml
+            </pre>
+        </div>
+        <div id="practicePrompt">
+            <h3>Practice Prompt</h3>
+            <button id="generatePrompt">Generate Practice Prompt</button>
+            <p id="promptOutput"></p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
