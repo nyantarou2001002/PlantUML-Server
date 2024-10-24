@@ -8,7 +8,11 @@
 ## Demo
 ### トップページ
 
-https://github.com/user-attachments/assets/f34e12ac-47c1-43ad-b31f-3c58d0330163
+
+
+https://github.com/user-attachments/assets/babed50c-920c-4ea1-a2b6-71b292b5ef40
+
+
 
 
 
@@ -23,7 +27,7 @@ https://github.com/user-attachments/assets/f34e12ac-47c1-43ad-b31f-3c58d0330163
 ソフトウェアエンジニアはユースケース図、クラス図、アクティビティ図など、ソフトウェア設計の際にさまざまな図を使用します。そのため、オンラインで手軽に図を作成およびダウンロードできるアプリケーションの提供が便利だと考え、PlantUML Editorを開発しました。
 ## 使用技術
 - フロントエンド
-  - 使用言語： HTML, CSS, Javascript
+  - 使用言語： HTML, CSS, TailwindCSS, Javascript
   - コードエディタ: Monaco Editor
 
 - バックエンド
